@@ -1,0 +1,148 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    --gradient-secondary: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    --gradient-accent: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    --gradient-dark: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    --gradient-light: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+    --gradient-success: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+    --gradient-warning: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+    --gradient-danger: linear-gradient(135deg, #ff0844 0%, #ffb199 100%);
+  }
+
+  body {
+    @apply antialiased text-gray-800 bg-gradient-to-br from-gray-50 to-gray-100;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold tracking-tight;
+  }
+
+  h1 {
+    @apply text-4xl md:text-5xl bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 to-purple-600;
+  }
+
+  h2 {
+    @apply text-3xl md:text-4xl bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-rose-500;
+  }
+
+  h3 {
+    @apply text-2xl md:text-3xl bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-cyan-500;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply px-6 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2;
+  }
+
+  .btn-primary {
+    @apply btn bg-gradient-to-r from-indigo-600 to-purple-600 text-white hover:from-indigo-700 hover:to-purple-700 focus:ring-indigo-500;
+  }
+
+  .btn-secondary {
+    @apply btn bg-gradient-to-r from-pink-500 to-rose-500 text-white hover:from-pink-600 hover:to-rose-600 focus:ring-pink-500;
+  }
+
+  .btn-accent {
+    @apply btn bg-gradient-to-r from-blue-500 to-cyan-500 text-white hover:from-blue-600 hover:to-cyan-600 focus:ring-blue-500;
+  }
+
+  .card {
+    @apply bg-white rounded-2xl shadow-xl p-6 transition-all duration-300 hover:shadow-2xl border border-gray-100;
+  }
+
+  .card-gradient {
+    @apply card bg-gradient-to-br from-white to-gray-50;
+  }
+
+  .gradient-border {
+    @apply border-2 border-transparent bg-clip-border bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500;
+  }
+
+  .nav-link {
+    @apply px-4 py-2 rounded-lg font-medium transition-all duration-300 hover:bg-gradient-to-r hover:from-indigo-50 hover:to-purple-50 hover:text-indigo-700;
+  }
+
+  .gradient-bg-primary {
+    background: var(--gradient-primary);
+  }
+
+  .gradient-bg-secondary {
+    background: var(--gradient-secondary);
+  }
+
+  .gradient-bg-accent {
+    background: var(--gradient-accent);
+  }
+
+  .gradient-bg-dark {
+    background: var(--gradient-dark);
+  }
+
+  .gradient-bg-light {
+    background: var(--gradient-light);
+  }
+
+  .gradient-bg-success {
+    background: var(--gradient-success);
+  }
+
+  .gradient-bg-warning {
+    background: var(--gradient-warning);
+  }
+
+  .gradient-bg-danger {
+    background: var(--gradient-danger);
+  }
+}
+
+@layer utilities {
+  .text-gradient-primary {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 to-purple-600;
+  }
+
+  .text-gradient-secondary {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-rose-500;
+  }
+
+  .text-gradient-accent {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-cyan-500;
+  }
+
+  .animate-gradient-x {
+    background-size: 200% 200%;
+    animation: gradient-x 3s ease infinite;
+  }
+
+  .animate-gradient-y {
+    background-size: 200% 200%;
+    animation: gradient-y 3s ease infinite;
+  }
+
+  .animate-gradient-xy {
+    background-size: 400% 400%;
+    animation: gradient-xy 5s ease infinite;
+  }
+}
+
+@keyframes gradient-x {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+@keyframes gradient-y {
+  0%, 100% { background-position: 50% 0%; }
+  50% { background-position: 50% 100%; }
+}
+
+@keyframes gradient-xy {
+  0%, 100% { background-position: 0% 0%; }
+  25% { background-position: 100% 0%; }
+  50% { background-position: 100% 100%; }
+  75% { background-position: 0% 100%; }
+}
